@@ -1,4 +1,4 @@
-Composer Template
+Sitemap Pages
 =========================
 
-Template for easily making composer projects.
+Simple class for getting list o' pages from sitemap.
