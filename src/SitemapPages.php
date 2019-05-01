@@ -10,11 +10,15 @@ namespace WaughJ\SitemapPages
 		public function __construct( string $url )
 		{
 			$this->url = $url;
-			$this->list = self::generatePageList( $url );
+			$this->list = null;
 		}
 
 		public function getPageList()
 		{
+			if ( $this->list === null )
+			{
+				$this->list = self::generatePageList( $this->url );
+			}
 			return $this->list;
 		}
 
@@ -63,7 +67,8 @@ namespace WaughJ\SitemapPages
 			return $data;
 		}
 
-		private $list = false;
+		private $list = null;
+		private $url = null;
 
 		private const PREFIX = "a";
 	}
